@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/01_components-and-jsx/Header";
+import List from "./components/01_components-and-jsx/List";
+import { LIST_DATAS } from "./components/01_components-and-jsx/data/listdata";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header></Header>
+      <section id="product-list">
+        <div className="center">
+          <h2 className="title">PRODUCT LIST</h2>
+          <div className="list-wrapper">
+            <List {...LIST_DATAS[0]}></List>
+            <List {...LIST_DATAS[1]}></List>
+            <List {...LIST_DATAS[2]}></List>
+            <List {...LIST_DATAS[3]}></List>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
